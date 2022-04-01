@@ -5,7 +5,8 @@ option = input("Please choose from the following options: \n \
   T for title case \n \
   C for capitalized case \n \
   S for swap case \n \
-  ______________________________ \n \
+  A for alternate case \n \
+______________________________ \n \
 \n \
   > ")
 
@@ -24,4 +25,21 @@ if option.lower() == "c":
 if option.lower() == "s":
 	message = message.swapcase()
 
+if option.lower() == "a":
+    message_lower = message.lower()
+    counter = 0
+    charlist = []
+
+    for char in message_lower:
+        counter = -1 if char == " " else counter
+
+        if (counter % 2 != 0):
+            charlist.append(char.upper())
+        else:
+            charlist.append(char)
+
+        counter += 1
+
+    message = ''.join(charlist)
+    
 print("\n" + message)
