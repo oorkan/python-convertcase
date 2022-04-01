@@ -1,5 +1,5 @@
-message = str(input("Please write the string you want to case-convert: "))
-option = str(input("Please choose from the following options: \n \
+message = input("Please write the string you want to case-convert: ")
+option = input("Please choose from the following options: \n \
   L for lower case \n \
   U for upper case \n \
   T for title case \n \
@@ -8,7 +8,7 @@ option = str(input("Please choose from the following options: \n \
   A for alternate case \n \
 ______________________________ \n \
 \n \
-  > "))
+  > ")
 
 if option.lower() == "l":
 	message = message.lower()
