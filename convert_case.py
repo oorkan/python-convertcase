@@ -5,7 +5,7 @@ option = str(input("Please choose from the following options: \n \
   T for title case \n \
   C for capitalized case \n \
   S for swap case \n \
-  OU for upper case by even ordering \n \
+  A for alternate case \n \
 ______________________________ \n \
 \n \
   > "))
@@ -25,23 +25,21 @@ if option.lower() == "c":
 if option.lower() == "s":
 	message = message.swapcase()
 
-if option.lower() == "ou":
-    order = 0
+if option.lower() == "a":
+    message_lower = message.lower()
     counter = 0
-    listO = []
-    for each in message:
-        if each == " ":
-            counter=0            
-        if(counter % 2 == 0):
-            listO.append(each.upper())
+    charlist = []
+
+    for char in message_lower:
+        counter = -1 if char == " " else counter
+
+        if (counter % 2 != 0):
+            charlist.append(char.upper())
         else:
-            if each != " " and message[order] == each.upper():
-                listO.append(message[order].lower())              
-            else:
-                listO.append(message[order])
-                               
-        order+=1
-        counter+=1
-    message = ''.join(listO)
+            charlist.append(char)
+
+        counter += 1
+
+    message = ''.join(charlist)
     
 print("\n" + message)
